@@ -1,0 +1,5 @@
+# macOS Files
+.DS_Store
+
+# persistence folder
+./resources/docker/postgresql/data/*
