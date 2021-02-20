@@ -2,4 +2,5 @@
 .DS_Store
 
 # persistence folder
-./resources/docker/postgresql/data/*
+resources/docker/postgresql/data/*
+resources/docker/mongodb/data/*

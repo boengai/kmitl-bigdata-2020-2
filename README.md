@@ -2,13 +2,13 @@ Docker compose for KMITL Big Data Analytics class
 
 ## How to start
 
-For `make` user
+### For `Makefile` user
 
 ```sh
 make up
 ```
 
-For `docker-compose` user
+### For `Docker` user
 
 ```sh
 docker-compose -f resources/docker/docker-compose.yaml up
@@ -39,4 +39,27 @@ Port: 5432
 Maintenance: bigdata
 Username: postgres
 Password: secret
+```
+
+## Running `MongoDB`
+
+### For `Makefile` user
+
+```sh
+make exec/mongo
+```
+
+Then
+
+```sh
+mongo -u root -p 1234
+```
+
+And enjoys
+
+### For `Docker` user
+
+```sh
+docker-compose -f resources/docker/docker-compose.yaml up -d nosql
+docker exec -it bigdata-nosql bash
 ```

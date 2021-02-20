@@ -5,6 +5,16 @@ networks:
     driver: bridge
 
 services:
+  nosql:
+    container_name: bigdata-nosql
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./mongodb/data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+      MONGO_INITDB_DATABASE: bigdata
   rdbms:
     container_name: bigdata-rdbms
     image: postgres:alpine
@@ -28,7 +38,7 @@ services:
     restart: unless-stopped
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@pgadmin.org
-      PGADMIN_DEFAULT_PASSWORD: 12345678
+      PGADMIN_DEFAULT_PASSWORD: 1234
       PGADMIN_LISTEN_PORT: 80
     volumes:
       - ./pgadmin/data:/root/.pgadmin
