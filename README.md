@@ -49,12 +49,6 @@ Password: secret
 make exec/mongo
 ```
 
-Then
-
-```sh
-mongo -u root -p 1234
-```
-
 And enjoys
 
 ### For `Docker` user
@@ -62,4 +56,10 @@ And enjoys
 ```sh
 docker-compose -f resources/docker/docker-compose.yaml up -d nosql
 docker exec -it bigdata-nosql bash
+```
+
+### After excuted docker container then run
+
+```sh
+mongo -u root -p 1234
 ```
