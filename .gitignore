@@ -3,4 +3,7 @@
 
 # persistence folder
 resources/docker/postgresql/data/*
-resources/docker/mongodb/data/*
+resources/docker/mongo/data/*
+
+# env
+.env
