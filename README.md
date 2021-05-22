@@ -10,11 +10,15 @@ make up
 
 ### For `Docker` user
 
+Copy `.env.example` to `.env`.<br />Then run the script
+
 ```sh
 docker-compose -f resources/docker/docker-compose.yaml up
 ```
 
 ## Then
+
+> P.S. Those variables below is depend on your [.env](./.env)
 
 You will see [PostgreSQL](https://www.postgresql.org/) running at `port=5432`
 
@@ -23,7 +27,7 @@ For access the database you can use [pgAdmin](http://localhost:8080) or [DBeaver
 ```sh
 Host: localhost
 Port: 5432
-User: postgres
+User: admin
 Password: secret
 Database name: bigdata
 ```
@@ -34,7 +38,7 @@ Input username = `admin@pgadmin.org` and password:`12345678` then setup config [
 
 ```sh
 Name: bigdata
-Hostname/address: db
+Hostname/address: rdbms
 Port: 5432
 Maintenance: bigdata
 Username: postgres
@@ -56,10 +60,4 @@ And enjoys
 ```sh
 docker-compose -f resources/docker/docker-compose.yaml up -d nosql
 docker exec -it bigdata-nosql bash
-```
-
-### After excuted docker container then run
-
-```sh
-mongo -u root -p 1234
 ```
